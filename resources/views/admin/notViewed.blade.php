@@ -14,12 +14,11 @@
             </thead>
             <tbody>
             @foreach($messages as $message)
-                <tr class="success">
+                <tr class="danger">
                     <td>{{$message->id}}</td>
                     <td>{{$message->message}}</td>
                     <td>{{$message->created_at}}</td>
-                    <td>
-                        <a href="{{route('admin.forum.update',$message->id)}}"><button type="button" class="btn btn-primary">Добавить</button></a>
+                    <td><a href="{{route('admin.forum.update',$message->id)}}"><button type="button" class="btn btn-primary">Добавить</button></a>
                         <a href="{{route('admin.forum.delete',$message->id)}}"><button type="button" class="btn btn-danger">Удалить</button></a>
                     </td>
                 </tr>
@@ -30,7 +29,7 @@
             <div class="alert-success">
                 {{session('success')}}
             </div>
-        @endif
+            @endif
     </div>
 
 @endsection
